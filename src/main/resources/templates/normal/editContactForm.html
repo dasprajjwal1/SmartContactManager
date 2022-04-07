@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/user_base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${title}"></title>
+<link rel="stylesheet" href="" />
+</head>
+<body>
+	<section>
+	<div class="card">
+
+			<div class="card-body">
+				<h1 class="text-center">Edit-Contact</h1>
+
+				<div class="contanier-fluid mt-1">
+
+					<div class="row">
+
+						<div class="col-md-8 offset-md-2">
+
+							<form action="#" th:object="${contact}"
+								enctype="multipart/form-data" method="post"
+								th:action="@{/user/editcontact}">
+								
+								
+								<input type="hidden" th:value ="${contact.cId}" name="cId"/>
+							
+
+								<!-- Firstname  -->
+
+								<div class="input-group">
+
+									<div class="input-group-prepend">
+
+										<div class="input-group-text mr-3">
+											<i class="fa fa-plus"></i>
+										</div>
+
+									</div>
+									<input type="text" name="name" th:value="${contact.name}"
+										class="form-control" required="required"  />
+								</div>
+
+								<br>
+								<!-- secondName-->
+
+								<div class="input-group">
+
+									<div class="input-group-prepend">
+
+										<div class="input-group-text mr-3">
+											<i class="fa fa-plus"></i>
+										</div>
+
+									</div>
+									<input type="text"  name="secondName" th:value="${contact.secondName}"
+									class="form-control" required="required" />
+								</div>
+								<br>
+
+								<!-- email -->
+
+								<div class="input-group" >
+
+									<div class="input-group-prepend" >
+
+										<div class="input-group-text mr-3">
+											<i class="fa fa-plus"></i>
+										</div>
+
+									</div>
+									<input type="email" name="email" th:value="${contact.email}"
+										class="form-control" required="required" />
+								</div>
+								<br>
+
+								<!-- work -->
+
+								<div class="input-group">
+
+									<div class="input-group-prepend">
+
+										<div class="input-group-text mr-3">
+											<i class="fa fa-plus"></i>
+										</div>
+
+									</div>
+									<input type="text" name="work" th:value="${contact.work}"
+										class="form-control" required="required" />
+								</div>
+								<br>
+								
+								<!-- Phone -->
+
+								<div class="input-group">
+
+									<div class="input-group-prepend">
+
+										<div class="input-group-text mr-3">
+											<i class="fa fa-plus"></i>
+										</div>
+
+									</div>
+									<input type="text" name="phone" th:value="${contact.phone}"
+										class="form-control" />
+								</div>
+								<br>
+								<!-- description -->
+
+								<div class="input-group">
+
+									
+									<textarea name="description" cols="30" rows="10" required="required" th:text="${contact.description}"></textarea>
+								</div>
+								<br>
+									
+								<!-- image  -->
+								<div class="contanier text-center">
+								
+								<img style="width:250px; height:250px;" class="img-fluid contact-profilepicture" src="" th:src ="@{'/img/'+${contact.image}}" alt="" />
+								
+								</div>
+								
+								<p>choose new profile image</p>
+								<div class="custom-image">
+								
+								<input type="file" name="profileimage"/>
+								
+								</div>
+								
+								
+								<div class="contanier text-center" >
+									<button class="btn btn-outline-primary">Save Contact</button>
+
+								</div>
+						</form>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>

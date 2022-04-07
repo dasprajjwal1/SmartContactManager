@@ -1,0 +1,105 @@
+body {
+	background: #EAEAEA;
+}
+
+.bg-primary {
+	background: #009688 !important;
+}
+.banner {
+	height: 91vh;
+	color: white;
+	background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
+		url("../img/banner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.my-card {
+	padding: 20px;
+	background: #ffffff;
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 10px;
+	max-width: 600px;
+	height: 400px;
+	border: 1px solid #9C9C9C;
+	background-color: white;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -85px;
+}
+
+/* sidebar style  */
+@media only screen and(max-width:600px) {
+	.sidebar {
+		display: none;
+		height: 100%;
+		background: white;
+		position: fixed;
+		padding-top: 45px;
+		width: 80% !important;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	height: 100%;
+	background: white;
+	position: fixed;
+	padding-top: 45px;
+	width: 18% !important;
+	z-index: 99999999999999999;
+}
+
+.content {
+	margin-left: 20%;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.sidebar .cross-btn {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+.contact-profilepicture
+{
+	width:30px;
+	height:30px;
+	object-fit:cover;
+	border-radius:50%;
+	
+}
+.active 
+{
+	background:#009688 !important;
+	color:white !important;
+}

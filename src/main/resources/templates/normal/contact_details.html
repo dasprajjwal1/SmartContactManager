@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/user_base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${title}"></title>
+<link rel="stylesheet" href="" />
+</head>
+<body>
+	<section>
+
+
+		<div class="card mr-3 ml-3" th:if=${contact}>
+			<h1 class="text-center">Showing Contact Details</h1>
+			<div class="card-body" >
+
+				<div class="container text-center">
+
+					<img class="contact-profilepicture"
+						style="height: 200px; width: 200px;"
+						th:src="@{'/img/' +${contact.image}}" alt="no image found" />
+
+					<h2 class="mt-2">
+						<span th:text="${contact.name}"></span>(<span
+							th:text="${contact.secondName}"></span>)
+					</h2>
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#Id</th>
+								<td scope="col">Contact<span th:text="${contact.cId}"></span></td>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Email</th>
+								<td scope="col"><span th:text="${contact.email}"></span></td>
+
+							</tr>
+							<tr>
+								<th scope="row">Phone</th>
+								<td scope="col"><span th:text="${contact.phone}"></span></td>
+
+							</tr>
+							<tr>
+								<th scope="row">Work</th>
+								<td scope="col"><span th:text="${contact.work}"></span></td>
+
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="description">
+						<th:block th:utext="${contact.description}">
+							</th>
+					</div>
+					<br>
+
+
+
+					<div class="container">
+						<a class="btn btn-outline-danger btn-block" href="#"
+							th:onclick="|deleteContact(${contact.cId})|">Delete</a> <a
+							class="btn btn-outline-primary btn-block"
+							th:href="@{'/user/edit/'+${contact.cId}}">Edit</a>
+					</div>
+				</div>
+
+
+
+			</div>
+
+
+			
+		</div>
+		
+		<h1 class=" text-center p-3 bg-danger text-white" th:unless=${contact}>you dont have permission to access this
+				contact.</h1>
+		
+
+	</section>
+</body>
+</html>
